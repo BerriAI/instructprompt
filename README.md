@@ -3,9 +3,16 @@
 ⚡ A Python package for storing, retrieving, and dynamically creating prompts for GPT models ⚡
 
 Our goal with InstructPrompt is to make it easier to tame large language models and make improving your LLM in production simpler to do. 
-Ever wanted to instruct an LLM with conditions like "If a user asks about creating an app / instance for a website tell them to use the https://api.berri.ai/create_app" but could not fit all the instructions in the prompt? 
+Ever wanted to instruct an LLM with conditions but could not fit all the instructions in the prompt? 
 
-InstructPrompt lets you do exactly that, while managing 1000+ of your instructions 
+```
+Example Instructions
+If a user asks about creating an app tell them to use the Berri API
+If a user asks about deleting data sources tell them it’s not possible to do that on berri as yet, but it is on our roadmap.
+When users asks What is the size/weight limit of each file wtell them there is no size limit for the files you can upload to create an app on Berri AI.
+```
+
+InstructPrompt lets you do exactly that with more than 1000+ of your instructions
 
 This package allows users to store instructions, which can be retrieved to dynamically create prompts giving gpt instructions on how to respond to a specific user's query. 
 
@@ -20,7 +27,7 @@ Once installed, you can import it into your python project by running the follow
 `import instructprompt`
 
 ## Using InstructPrompt
-
+### Storing your instructions
 InstructPrompt provides 3 main functions: `add()`, `list()`, and `query()`. After adding your instructions you can query instructprompt to get the most appropirate instructions for GPT, effectively allowing you to increase your coverage by 35%
 
 
