@@ -2,7 +2,12 @@
 
 ⚡ A Python package for storing, retrieving, and dynamically creating prompts for GPT models ⚡
 
-Our goal with InstructPrompt is to make it easier to tame large language models and make improving your LLM in production simpler to do. This package allows users to store instructions, which can be retrieved to dynamically create prompts giving gpt instructions on how to respond to a specific user's query. 
+Our goal with InstructPrompt is to make it easier to tame large language models and make improving your LLM in production simpler to do. 
+Ever wanted to instruct an LLM with conditions like "If a user asks about creating an app / instance for a website tell them to use the https://api.berri.ai/create_app" but could not fit all the instructions in the prompt? 
+
+InstructPrompt lets you do exactly that, while managing 1000+ of your instructions 
+
+This package allows users to store instructions, which can be retrieved to dynamically create prompts giving gpt instructions on how to respond to a specific user's query. 
 
 ## Getting Started 
 
@@ -16,11 +21,12 @@ Once installed, you can import it into your python project by running the follow
 
 ## Using InstructPrompt
 
-InstructPrompt provides 3 main functions: `add()`, `list()`, and `query()`.
+InstructPrompt provides 3 main functions: `add()`, `list()`, and `query()`. After adding your instructions you can query instructprompt to get the most appropirate instructions for GPT, effectively allowing you to increase your coverage by 35%
+
 
 ### add()
 
-The `add()` function takes in an instruction as a string and adds it to the collection. It uses ChromaDB to store the instruction and assigns it a unique id. It returns a confirmation message once the instruction is successfully added. 
+The `add()` function takes in an instruction as a string and adds it to the collection. It stores the instruction and assigns it a unique id. It returns a confirmation message once the instruction is successfully added. 
 
 ```
 import instructprompt
