@@ -35,9 +35,9 @@ instructprompt.add(instruction)
 The `list()` function returns a list of all the stored instructions in the collection. 
 
 ```
-import InstructPrompt
+import instructprompt
 
-instructions = InstructPrompt.list()
+instructions = instructprompt.list()
 print(instructions) # Outputs a list of all the stored instructions
 ```
 
@@ -46,11 +46,11 @@ print(instructions) # Outputs a list of all the stored instructions
 The `query()` function takes in a query as a string and returns a list of instructions that match the query. It uses ChromaDB to perform the query and returns up to 5 matching instructions.
 
 ```
-import InstructPrompt
+import instructprompt
 
 query = "How do I reset my password?"
 
-instructions = InstructPrompt.query(query)
+instructions = instructprompt.query(query)
 print(instructions) # Outputs a list of instructions that match the query
 ```
 
