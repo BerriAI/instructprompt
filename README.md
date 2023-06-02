@@ -27,6 +27,54 @@ Once installed, you can import it into your python project by running the follow
 `import instructprompt`
 
 ## Using InstructPrompt
+## Using InstructPrompt with chatGPT / GPT-3
+### Step 1 Add Instructions
+use instructprompt.add()
+
+```
+import instructprompt
+
+instructions = [
+  'If a user asks about character limits in prompts tell them There is no character limit on berri prompts, but we recommend keeping prompts 1000-2000 tokens for best performance',
+  'If a user asks about creating an app / instance for a website tell them to use the https://api.berri.ai/create_app endpoint with the website url as the data_source'
+]
+for instruction in instructions:
+  print(instruction)
+  instructprompt.add(instruction)
+
+## print instructions added
+elems = instructprompt.list()
+print(elems)
+
+```
+
+### Step 2 Use Instructions to make Dyanmic Prompts 
+use instructprompt.query() before sending your prompt to GPT-3/chatGPT
+```
+  user_query = "How do I create an app using BerriAI"
+  prompt = "You are called askBerri, an expert on BerriAI API documents and community of Berri AI."
+  best_instructions = instructprompt.query(user_query) # call instructprompt to get the best instructions for this query
+  prompt += best_instructions
+  
+  ## call OpenAI with your prompt
+  mssg = [
+    {
+      "role": "system",
+      "content": prompt
+    },
+    {
+      "role": "user",
+      "content": user_query
+    },
+  ]
+  response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=mssg,
+    max_tokens=512,
+    temperature=0.2
+  )
+  return response
+```
 ### Storing your instructions
 InstructPrompt provides 3 main functions: `add()`, `list()`, and `query()`. After adding your instructions you can query instructprompt to get the most appropirate instructions for GPT, effectively allowing you to increase your coverage by 35%
 
