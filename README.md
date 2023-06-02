@@ -38,7 +38,7 @@ The `add()` function takes in an instruction as a string and adds it to the coll
 ```
 import instructprompt
 
-instruction = "When a customer asks for tracking please ask for the customer's name and order number."
+instruction = "If a user complains about spam messages, politely apologize and say they must contact the Berri support team"
 
 instructprompt.add(instruction)
 ```
