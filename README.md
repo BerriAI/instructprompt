@@ -23,11 +23,11 @@ InstructPrompt provides 3 main functions: `add()`, `list()`, and `query()`.
 The `add()` function takes in an instruction as a string and adds it to the collection. It uses ChromaDB to store the instruction and assigns it a unique id. It returns a confirmation message once the instruction is successfully added. 
 
 ```
-import InstructPrompt
+import instructprompt
 
 instruction = "Please provide the customer's name and order number."
 
-InstructPrompt.add(instruction)
+instructprompt.add(instruction)
 ```
 
 ### list()
