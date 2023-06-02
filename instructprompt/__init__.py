@@ -1,11 +1,14 @@
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 
 import chromadb
+import random
+
 
 chroma_client = chromadb.Client()
 collection = chroma_client.create_collection(name="user_instructprompt_collection")
 
 def add(instruction: str): 
+    id = random.randint(1, 9999)
     collection.add(
         documents=[instruction],
         ids=[str(id)]
