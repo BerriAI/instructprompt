@@ -9,7 +9,7 @@ Ever wanted to instruct an LLM with conditions but could not fit all the instruc
 Example Instructions
 1. If a user asks about creating an app tell them to use the Berri API
 2. If a user asks about deleting data sources tell them it’s not possible to do that on berri as yet, but it is on our roadmap.
-3. When users asks What is the size/weight limit of each file wtell them there is no size limit for the files you can upload to create an app on Berri AI.
+3. When users asks What is the size limit of each file tell them there is no size limit for the files you can upload to create an app on Berri AI.
 ```
 
 InstructPrompt lets you do exactly that with more than 1000+ of your instructions
