@@ -2,7 +2,19 @@
 
 ⚡ A Python package for storing, retrieving, and dynamically creating prompts for GPT models ⚡
 
-Our goal with InstructPrompt is to make it easier to tame large language models and make improving your LLM in production simpler to do. This package allows users to store instructions, which can be retrieved to dynamically create prompts giving gpt instructions on how to respond to a specific user's query. 
+Our goal with InstructPrompt is to make it easier to tame large language models and make improving your LLM in production simpler to do. 
+Ever wanted to instruct an LLM with conditions but could not fit all the instructions in the prompt? 
+
+```
+Example Instructions
+1. If a user asks about creating an app tell them to use the Berri API
+2. If a user asks about deleting data sources tell them it’s not possible to do that on berri as yet, but it is on our roadmap.
+3. When users asks What is the size limit of each file tell them there is no size limit for the files you can upload to create an app on Berri AI.
+```
+
+InstructPrompt lets you do exactly that with more than 1000+ of your instructions
+
+This package allows users to store instructions, which can be retrieved to dynamically create prompts giving gpt instructions on how to respond to a specific user's query. 
 
 ## Getting Started 
 
@@ -15,17 +27,18 @@ Once installed, you can import it into your python project by running the follow
 `import instructprompt`
 
 ## Using InstructPrompt
+### Storing your instructions
+InstructPrompt provides 3 main functions: `add()`, `list()`, and `query()`. After adding your instructions you can query instructprompt to get the most appropirate instructions for GPT, effectively allowing you to increase your coverage by 35%
 
-InstructPrompt provides 3 main functions: `add()`, `list()`, and `query()`.
 
 ### add()
 
-The `add()` function takes in an instruction as a string and adds it to the collection. It uses ChromaDB to store the instruction and assigns it a unique id. It returns a confirmation message once the instruction is successfully added. 
+The `add()` function takes in an instruction as a string and adds it to the collection. It stores the instruction and assigns it a unique id. It returns a confirmation message once the instruction is successfully added. 
 
 ```
 import instructprompt
 
-instruction = "Please provide the customer's name and order number."
+instruction = "If a user complains about spam messages, politely apologize and say they must contact the Berri support team"
 
 instructprompt.add(instruction)
 ```
